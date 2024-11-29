@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+  --primaryColor--:#75A200;
+  --bacground--: #FFFFFF;
+}
+
+
+.exit-button{
+  width: 112px;
+  height: 35px;
+  top: 21.08px;
+  left: 293px;;
+  border-radius: 30px;
+  border: 1px;
+  border: 1px solid #75A200;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #000000;
+  background: var(--bacground--);
+}
+
+
+.saludo{
+  font-family: "Poppins", serif;
+  width: 256px;
+  height: 23px;
+  top: 111px;
+  left: 93px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: var(--primaryColor--);
+}
+
+.inicio{
+  width: 262px;
+  height: 30px;
+  top: 166px;
+  left: 90px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: "Poppins", serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 15px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #1B1B20;
+
+}
+.membership-card{
+  width: 286px;
+  height: 310px;
+  top: 221px;
+  left: 72px;
+  border-radius: 10px;
+  border: 1px;
+  background: linear-gradient(152.67deg, #FFFFFF 10.7%, #EEEEEE 123.18%);
+  border: 1px solid #75A200;
+  box-shadow: 0px 4.96px 10.42px 0px #0000001A;
+}
+
+.memebership-price{
+  width: 264.76px;
+  height: 45px;
+  top: 236px;
+  left: 336.76px;
+  gap: 0px;
+  border-radius: 0px 15px 15px 0px;
+  opacity: 0px;
+  background: #75A200;
+  box-shadow: 0px 2px 3.1px 0px #00000014;
+  font-family: Poppins;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 37.5px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #FFFFFF;
+
+}
+
+.membership-name{
+  width: 184.06px;
+  height: 40px;
+  top: 619px;
+  left: 115.89px;  
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #1B1B20;
+}
+
+.membership-type{
+  width: 184.06px;
+  height: 40px;
+  top: 619px;
+  left: 115.89px;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;  
+  color:var(--primaryColor--);
+}
+
+.membership-benefits{
+  width: 148.66px;
+  height: 75px;
+  top: 371px;
+  left: 115.89px;
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 25px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #1B1B20;
+
+}
+
+.membership-button{
+  width: 208.13px;
+  height: 37px;
+  top: 838px;
+  left: 115.89px;
+  gap: 0px;
+  border-radius: 15px;
+  border: 1px;
+  opacity: 0px;
+  background: #FFFFFF;
+  border: 1px solid #75A200;
+  box-shadow: 0px 2px 3.1px 0px #00000014;
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22.5px;
+  text-align: center;
+
+}
+
+.exit-button:hover,
+.membership-button:hover{
+  transform: scale(0.97);
+  cursor: pointer;
+}
+@media(max-width: 1250px){
+
+}
+
+@media(max-width: 720px){
+   
+    }
