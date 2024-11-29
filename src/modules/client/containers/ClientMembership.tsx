@@ -17,7 +17,7 @@ const ClientMembership = () => {
         <button className='exit-button'>Salir</button>
       </div>
       <h1 className='saludo'>Bienvenido</h1>
-      <p className='inicio'>Para continuar selecciona una membresia que se adapte a ti</p>
+      <p className='inicio'>Para continuar selecciona una membresia que se adapte a</p>
       <Card className={classes.card}>
         <div className={classes.paper}>$50.000/año</div>
         <div className='membership-name'>Membresia 1</div>
