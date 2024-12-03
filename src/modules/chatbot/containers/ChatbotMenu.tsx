@@ -1,5 +1,5 @@
 import { makeStyles } from '@mui/styles';
-import {border, margin, styled, textAlign} from '@mui/system';
+import {border, fontSize, height, lineHeight, margin, styled, textAlign, width} from '@mui/system';
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -14,19 +14,32 @@ const ChatbotMenu = () => {
 
   //const classes = useStyles();
 
+  const pg = {
+    lineHeight:'15px',
+    fontSize:'15px',
+    color:'#464E57'
+  } 
+
   const ContainerDiv = styled('div')({
     display: 'flex',
     flexDirection:'column',
-    padding:'25px'
+    padding:'25px',
   });
 
   const header = {
     display:"flex",
-    justifyContent:"space-between"
+    justifyContent:"space-between",
+    alignItems:'center',
   }
 
-  const rightHeader={
+  const leftHeader={
     display:"flex"
+  }
+
+  const heiiLogoStyle={
+    width: '49px',
+    height:'80%',
+    marginLeft:'10px'
   }
 
   const NavBar = styled('div')({
@@ -98,15 +111,16 @@ const ChatbotMenu = () => {
     background:'#75A200',
     border:'none',
     borderRadius:'20.5px',  
-    color:'#FFFFFF'
+    color:'#FFFFFF',
+    marginTop:'100px'
   });
 
   return (
     <ContainerDiv>
-      <div style={header} >
-        <div style={rightHeader} >
+      <div style={header}>
+        <div style={leftHeader} >
           <PersonIcon/>
-          <img src={heiiLogo} alt="heii-logo" />
+          <img src={heiiLogo} alt="heii-logo" style={heiiLogoStyle} />
         </div>
         <OutButton>Salir  <LogoutIcon style={logoutIcon} /> </OutButton>
       </div>
@@ -118,7 +132,7 @@ const ChatbotMenu = () => {
       </NavBar>
 
       <div>
-        <p>Los siguientes datos son necesarios 
+        <p style={pg} >Los siguientes datos son necesarios 
           para establecer los parámetros en que la IA 
           responderá a las solicitudes de los usuarios.</p>
       </div>
@@ -126,14 +140,14 @@ const ChatbotMenu = () => {
       <form action="">  
         <div>
           <h2><b>Nombre de la IA</b></h2>
-          <p>Este el nombre con el que la IA se va a 
+          <p style={pg}  >Este el nombre con el que la IA se va a 
             presentar al atender a sus usuarios</p>  
           <TextField id="ia-name" placeholder='Ingrese el nombre' variant="outlined" slotProps={{input: {style: textField}}} />                      
         </div>
 
         <div>
           <h2><b>Tono y personalidad</b></h2>
-          <p>Seleccione una de las opciones que mejor
+          <p style={pg}>Seleccione una de las opciones que mejor
           representen su marca.</p>                      
           <FormControl>          
               <RadioGroup
@@ -150,7 +164,7 @@ const ChatbotMenu = () => {
 
         <div>
           <h2><b>Productos y precios del Menú</b></h2>
-          <p> Especifique los datos de los productos, su 
+          <p style={pg}> Especifique los datos de los productos, su 
             categoría, nombre del producto y precios exactos 
             separados por una “,” y un salto de línea para 
             cambiar de producto. 
@@ -176,7 +190,7 @@ const ChatbotMenu = () => {
 
         <div>
           <h2><b>Opciones de adiciones</b></h2>
-          <p>Agregue un listado de los ingredientes 
+          <p style={pg} >Agregue un listado de los ingredientes 
             adicionales que “Chatbot” puede sugerir al 
             cliente junto con sus precios 
           </p>   
@@ -190,7 +204,7 @@ const ChatbotMenu = () => {
 
         <div>
           <h2><b>Frases de confirmación</b></h2>
-          <p>Qué frases debería usar el Chatbot para confirmar
+          <p style={pg} >Qué frases debería usar el Chatbot para confirmar
             los pedidos con sus usuarios. 
             Separe las frases con un salto de línea 
           </p>   
@@ -204,7 +218,7 @@ const ChatbotMenu = () => {
 
         <div>
           <h2><b>Instrucciones para correcciones</b></h2>        
-          <p>
+          <p style={pg} >
             Cómo debe responder Chatbot al cliente si menciona un precio incorrecto?
             <br/> <br/>
             Agregue los escenarios que crea correspondientes, 
@@ -221,7 +235,7 @@ const ChatbotMenu = () => {
 
         <div>
           <h2><b>Parametrización</b></h2>        
-          <p>
+          <p style={pg} >
             Especificar los datos que la IA debe responder
             en los siguientes casos
           </p>   
@@ -256,7 +270,7 @@ const ChatbotMenu = () => {
 
         <div>
           <h2><b>Enlace a Redes sociales y soporte</b></h2>        
-          <p>
+          <p style={pg} >
             Proporcione los links correspondientes para conectar 
             el administrador de chat de sus Redes sociales y canales de atención
           </p>   
