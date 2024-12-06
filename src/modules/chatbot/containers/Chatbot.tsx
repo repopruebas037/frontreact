@@ -3,6 +3,9 @@ import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import heiiLogo from '../../../assets/images/heiiLogo.png'
+import op1 from '../../../assets/images/op1.png'
+import op2 from '../../../assets/images/op2.png'
+import op3 from '../../../assets/images/op3.png'
 import {Paper} from '@mui/material';
 import { useState } from 'react';
 import ChatInput from './ChatInput';
@@ -64,13 +67,18 @@ const Chatbot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
 
   const handleSend = (message: string) => {
-    setMessages([...messages, { message, sender: 'user' }]);
+    setMessages([...messages, { message, images:[], sender: 'user' }]);
 
     // Simula una respuesta del chatbot después de 1 segundo
     setTimeout(() => {
       setMessages((prevMessages) => [
         ...prevMessages,
-        { message: 'Respuesta del chatbot', sender: 'bot' },
+        { message:'Claro! en seguida hay algunas '
+                + 'opciones que te encantarán, '
+                + 'y lo mejor, que están cerca a tu ubicación',
+          images:[op1,op2,op3],
+          sender: 'bot',
+        }
       ]);
     }, 1000);
   };
@@ -102,7 +110,7 @@ const Chatbot = () => {
             height: '50vh',
             display: 'flex',
             flexDirection: 'column',
-            padding: '15px',
+            padding: '15px'
           }}
           >
           <Box
@@ -110,11 +118,14 @@ const Chatbot = () => {
               flex: 1,
               overflowY: 'auto',
               display: 'flex',
-              flexDirection: 'column',
+              flexDirection: 'column'
             }}
             >
             {messages.map((msg, index) => (
-              <ChatMessage key={index} message={msg.message} sender={msg.sender} />
+              <ChatMessage key={index} 
+                message={msg.message} 
+                images={msg.images}
+                sender={msg.sender} />
             ))}
             </Box>
             <ChatInput onSend={handleSend} />
