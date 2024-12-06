@@ -1,11 +1,13 @@
 
 //import { Theme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
-//import Alert from '@mui/material/Alert';
-//import Paper from '@mui/material/Paper';
-//import { colors } from '@mui/material';
-import Card from '@mui/material/Card';
-//import { buffer } from 'stream/consumers';
+import Alert from '@mui/material/Alert';
+import { colors, Card, Paper, CardContent, Typography, Button, Box, AppBar, Toolbar, Grid, List, ListItem, ListItemIcon, Checkbox } from '@mui/material';
+import { buffer } from 'stream/consumers';
+import _default from '@mui/material/styles/identifier';
+import { hover } from '@testing-library/user-event/dist/hover';
+import { alignProperty } from '@mui/material/styles/cssUtils';
+
 
 const ClientMembership = () => {
 
@@ -13,50 +15,111 @@ const ClientMembership = () => {
   
   return (
     <div className={classes.container}>
-      <div>
-        <button className='exit-button'>Salir</button>
-      </div>
-      <h1 className='saludo'>Bienvenido</h1>
-      <p className='inicio'>Para continuar selecciona una membresia que se adapte a ti</p>
-      <Card className={classes.card}>
-        <div className={classes.paper}>$50.000/año</div>
-        <div className='membership-name'>Membresia 1</div>
-        <div className='membership-type'>Inicial</div>
-        <ul className='membership-benefits'>
+      <AppBar elevation={0} position="static" style={{background:'#FFFFFF'}}>
+      <Toolbar>
+        <Grid container justifyContent="space-between" alignItems="flex-end">
+          <Grid item>
+            {/* Logo */}
+          </Grid>
+          <Grid item>
+            <Typography variant="h6" component="div" style={{color:'#003349'}} >
+              Heii
+            </Typography>
+          </Grid>
+          <Grid item>
+            <button className={classes.button}>Salir</button>
+          </Grid>
+        </Grid>
+      </Toolbar>
+    </AppBar>
+      <h1 style={{color:'#75A200'}} className={classes.typography}>Bienvenido</h1>
+      <p style={{color:'#1B1B20'}}>Para continuar selecciona una membresia que se adapte a ti
+      </p>
+
+      <Box className={classes.cardbox}>
+        <CardContent>
+        <Typography className={classes.paper}>
+          $50.000/año
+        </Typography >
+        <Typography style={{color:'#1B1B20'}}>
+        Membresia 1
+        </Typography>
+        <Typography style={{color:'#75A200'}}>
+        Inicial
+        </Typography>
+        <List>
+          <Typography>
+          Beneficios:
+          </Typography>
+          <ul>
           <li>Chat con IA</li>
           <li>Pagina web</li>
           <li>1 sede</li>
-        </ul>
+          </ul>
+        </List>
+        </CardContent>
+        <Grid item>
         <button className={classes.button}>Adquirir</button>
-      </Card>
-      <Card className={classes.card}>
-        <div className={classes.paper}>$100.000/año</div>
-        <div className='membership-name'>Membresia 2</div>
-        <div className='membership-type'>Intermedio</div>
-        <ul className='membership-benefits'>
+        </Grid>
+      </Box>
+
+      <Box className={classes.cardbox}>
+        <CardContent >
+        <Typography className={classes.paper}>
+          $100.000/año
+        </Typography>
+        <Typography style={{color:'#1B1B20'}}>
+        Membresia 2
+        </Typography>
+        <Typography style={{color:'#75A200'}}>
+        Intermedio
+        </Typography>
+        <List>
+          <Typography>
+            Beneficios:
+          </Typography>
+          <ul>
           <li>Chat con IA</li>
           <li>Pagina web</li>
           <li>2 Sedes</li>
           <li>Reportes</li>
           <li>Menu Personalizado</li>
-        </ul>
+          </ul>
+        </List>
+        </CardContent>
+        <Grid item className={classes.grid}>
         <button className={classes.button}> Adquirir</button>
-      </Card>
-      <Card className={classes.card}>
+        </Grid>
+      </Box>
+
+      <Box className={classes.cardbox}>
+        <CardContent className={classes.typography}>
         <div className={classes.paper}>$200.000/ año</div>
-        <div className='membership-name'>Membresia 3</div>
-        <div className='membership-type'>Avanzado</div>
-        <ul className='membership-benefits'>
+        <Typography style={{color:'#1B1B20'}}>
+        Membresia 2
+        </Typography>
+        <Typography style={{color:'#75A200'}}>
+        Avanzado
+        </Typography>
+        <List>
+        <Typography>
+        Beneficios:
+        </Typography>
+        <ul>
           <li>Chat con IA</li>
           <li>Pagina web</li>
           <li>2 sedes</li>
           <li>Reportes</li>
           <li>Editar menu</li>
         </ul>
+        </List>
+        </CardContent>
+        <Grid item>
         <button className={classes.button}>Adquirir</button>
-      </Card>
+        </Grid>
+      </Box>
     </div>
-    
+
   )
 }
 
@@ -71,7 +134,8 @@ const useStyles = makeStyles({
     background: 'rgba(255, 255, 255, 1)',
   },
 
-  card:{
+  cardbox:{
+    margin: '10px ',
     width: '286px',
     height: '310px',
     top: '221px',
@@ -82,26 +146,26 @@ const useStyles = makeStyles({
     boxShadow:'0px 4.96px 10.42px 0px #0000001A',
   },
 
-  cardContent:{
-    
+  typography:{
+    fontfamily: 'Poppins',
+    fontsize: '15px',
+    fontweight: '700',
+    lineheight: '22.5px',
+    textalign: 'center',
+    textunderlineposition: 'from-font',
   },
 
   paper:{
-
-    /*width: '264.76px',
+    boxsizing: 'border-box',
+    boxshadow: '0px 2px 3.1px rgba(0, 0, 0, 0.08)',
+    width: '264.76px',
     height: '37px',
     top: '237px',
     left: '72px',
-    borderRadius: '0px 15px 15px 0px',*/
-    width: '264.76px',
-    height: '45px',
-    top: '236px',
-    left: '336.76px',
-    borderRadius: '0px 15px 15px 0px',
-    angle: '-180 deg',
-    background: '#75A200',
-    boxShadow: '0px 2px 3.1px 0px #00000014',
-    color:'#FFFFFF'
+    borderRadius:' 0px 15px 15px 0px',
+    background:'#75A200',
+    color:'#FFFFFF',
+    textAlign: 'center',
   },
 
   button:{
@@ -114,6 +178,14 @@ const useStyles = makeStyles({
     border: '1px solid #75A200',
     boxShadow: '0px 2px 3.1px 0px #00000014',
     color:'#000000',
+    boxsizing: 'border-box',
+    alignItems: 'center',
+    
+  },
+
+  grid:{
+    display: 'flex',
+    justifyContent:'center',
   }
 
 
