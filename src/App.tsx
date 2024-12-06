@@ -1,12 +1,15 @@
 import React from 'react';
-//import './App.css';
+import './App.css';
 import './modules/client/containers/ClientMembership'
-import ClientMembership from './modules/client/containers/ClientMembership';
+import Router from './routes/RouteList'
+import { BrowserRouter } from 'react-router-dom';
 
 
 function App() {
   return (
-    <ClientMembership/>
+    <BrowserRouter>
+      <Router/>
+    </BrowserRouter>
     
   );
 }
