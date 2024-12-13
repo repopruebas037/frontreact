@@ -1,4 +1,4 @@
-import {Box, styled} from '@mui/system';
+import {border, Box, height, styled, width} from '@mui/system';
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -6,7 +6,7 @@ import heiiLogo from '../../../assets/images/heiiLogo.png'
 import op1 from '../../../assets/images/op1.png'
 import op2 from '../../../assets/images/op2.png'
 import op3 from '../../../assets/images/op3.png'
-import {Paper} from '@mui/material';
+import {Card, CardContent, CardMedia, Paper, TextField, Typography} from '@mui/material';
 import { useState } from 'react';
 import ChatInput from './ChatInput';
 import ChatMessage, { Message } from './ChatMessage';
@@ -76,7 +76,7 @@ const Chatbot = () => {
         { message:'Claro! en seguida hay algunas '
                 + 'opciones que te encantarán, '
                 + 'y lo mejor, que están cerca a tu ubicación',
-          images:[op1,op2,op3],
+          images:[op1, op2, op3],
           sender: 'bot',
         }
       ]);
@@ -105,7 +105,7 @@ const Chatbot = () => {
       </div>
 
       <div>
-        <Paper
+        <Card
           style={{
             height: '50vh',
             display: 'flex',
@@ -114,11 +114,19 @@ const Chatbot = () => {
           }}
           >
           <Box
-            style={{
-              flex: 1,
+            sx={{
+              flex:1,              
               overflowY: 'auto',
+              padding:'20px',
+              "&::-webkit-scrollbar": {
+                width: "6px"
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "#e0e0e0",
+                borderRadius: "3px"
+              },
               display: 'flex',
-              flexDirection: 'column'
+              flexDirection: 'column',              
             }}
             >
             {messages.map((msg, index) => (
@@ -128,9 +136,17 @@ const Chatbot = () => {
                 sender={msg.sender} />
             ))}
             </Box>
-            <ChatInput onSend={handleSend} />
-          </Paper>      
+            <ChatInput onSend={handleSend} />            
+          </Card>      
         </div>
+        <Card
+        sx={{ maxWidth: 400, height:'auto' }}
+        style={{
+            backgroundColor:'#F5F5F5',
+            margin: '8px 0'    
+          }}
+        >
+    </Card>
     </ContainerDiv>
   )
 }
