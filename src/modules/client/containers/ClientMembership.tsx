@@ -1,13 +1,7 @@
-
-//import { Theme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
-import Alert from '@mui/material/Alert';
-import { colors, Card, Paper, CardContent, Typography, Button, Box, AppBar, Toolbar, Grid, List, ListItem, ListItemIcon, Checkbox } from '@mui/material';
-import { buffer } from 'stream/consumers';
-import _default from '@mui/material/styles/identifier';
-import { hover } from '@testing-library/user-event/dist/hover';
-import { alignProperty } from '@mui/material/styles/cssUtils';
-
+import {CardContent, Typography, Box, Grid, List} from '@mui/material';
+import HeiiHeader from '../../common/containers/HeiiHeader'
+import CheckIcon from '@mui/icons-material/Check';
 
 const ClientMembership = () => {
 
@@ -15,77 +9,71 @@ const ClientMembership = () => {
   
   return (
     <div className={classes.container}>
-      <AppBar elevation={0} position="static" style={{background:'#FFFFFF'}}>
-      <Toolbar>
-        <Grid container justifyContent="space-between" alignItems="flex-end">
-          <Grid item>
-            {/* Logo */}
-          </Grid>
-          <Grid item>
-            <Typography variant="h6" component="div" style={{color:'#003349'}} >
-              Heii
-            </Typography>
-          </Grid>
-          <Grid item>
-            <button className={classes.button}>Salir</button>
-          </Grid>
-        </Grid>
-      </Toolbar>
-    </AppBar>
+    <HeiiHeader/>
       <h1 style={{color:'#75A200'}} className={classes.typography}>Bienvenido</h1>
       <p style={{color:'#1B1B20'}}>Para continuar selecciona una membresia que se adapte a ti
       </p>
 
       <Box className={classes.cardbox}>
         <CardContent>
-        <Typography className={classes.paper}>
-          $50.000/año
-        </Typography >
-        <Typography style={{color:'#1B1B20'}}>
-        Membresia 1
-        </Typography>
-        <Typography style={{color:'#75A200'}}>
-        Inicial
-        </Typography>
-        <List>
-          <Typography>
-          Beneficios:
-          </Typography>
-          <ul>
-          <li>Chat con IA</li>
-          <li>Pagina web</li>
-          <li>1 sede</li>
-          </ul>
-        </List>
+          <Typography className={classes.membershipPrice}>
+            $50.000/año
+          </Typography >
+        <div style={{margin:'10px 10px 0px 10px '}}>      
+          <div style={{margin:'10px 0px 10px 0px '}}>
+            <Typography style={{color:'#1B1B20'}}>
+              Membresia 1
+            </Typography>
+            <Typography style={{color:'#75A200'}}>
+              Inicial
+            </Typography>
+          </div>                       
+          <div>            
+              <Typography>
+                Beneficios:
+              </Typography>
+              <ul style={{listStyle:'none', margin:0, padding:0}} >
+                <li className={classes.membershipBenefitItem} > <CheckIcon/> Chat con IA</li>
+                <li className={classes.membershipBenefitItem} > <CheckIcon/> Pagina web</li>
+                <li className={classes.membershipBenefitItem} > <CheckIcon/> 1 sede</li>
+                <li className={classes.membershipBenefitItem} > <CheckIcon/> 1 sede</li>
+                <li className={classes.membershipBenefitItem} > <CheckIcon/> 1 s</li>              
+              </ul>
+          </div>
+        </div>                
         </CardContent>
-        <Grid item>
+        <Grid item className={classes.grid}>
         <button className={classes.button}>Adquirir</button>
         </Grid>
       </Box>
 
       <Box className={classes.cardbox}>
         <CardContent >
-        <Typography className={classes.paper}>
+        <Typography className={classes.membershipPrice}>
           $100.000/año
         </Typography>
-        <Typography style={{color:'#1B1B20'}}>
-        Membresia 2
-        </Typography>
-        <Typography style={{color:'#75A200'}}>
-        Intermedio
-        </Typography>
-        <List>
-          <Typography>
-            Beneficios:
-          </Typography>
-          <ul>
-          <li>Chat con IA</li>
-          <li>Pagina web</li>
-          <li>2 Sedes</li>
-          <li>Reportes</li>
-          <li>Menu Personalizado</li>
-          </ul>
-        </List>
+        <div style={{margin:'10px 10px 0px 10px '}}>
+          <div style={{margin:'10px 0px 10px 0px '}}>
+            <Typography style={{color:'#1B1B20'}}>
+              Membresia 2
+            </Typography>
+            <Typography style={{color:'#75A200'}}>
+              Intermedio
+            </Typography>
+          </div>
+          <div>        
+            <Typography>
+              Beneficios:
+            </Typography>
+            <ul style={{listStyle:'none'}}>
+              <li className={classes.membershipBenefitItem} > <CheckIcon/> Chat con IA</li>
+              <li className={classes.membershipBenefitItem} > <CheckIcon/> Pagina web</li>
+              <li className={classes.membershipBenefitItem} > <CheckIcon/> 2 Sedes</li>
+              <li className={classes.membershipBenefitItem} > <CheckIcon/> Reportes</li>
+              <li className={classes.membershipBenefitItem} > <CheckIcon/> Menu Personalizado</li>
+            </ul>          
+          </div>
+        </div>                
         </CardContent>
         <Grid item className={classes.grid}>
         <button className={classes.button}> Adquirir</button>
@@ -94,27 +82,31 @@ const ClientMembership = () => {
 
       <Box className={classes.cardbox}>
         <CardContent className={classes.typography}>
-        <div className={classes.paper}>$200.000/ año</div>
-        <Typography style={{color:'#1B1B20'}}>
-        Membresia 2
-        </Typography>
-        <Typography style={{color:'#75A200'}}>
-        Avanzado
-        </Typography>
-        <List>
-        <Typography>
-        Beneficios:
-        </Typography>
-        <ul>
-          <li>Chat con IA</li>
-          <li>Pagina web</li>
-          <li>2 sedes</li>
-          <li>Reportes</li>
-          <li>Editar menu</li>
-        </ul>
-        </List>
+        <div className={classes.membershipPrice}>$200.000/ año</div>
+        <div style={{margin:'10px 10px 0px 10px '}}>
+          <div style={{margin:'10px 0px 10px 0px '}} >
+            <Typography style={{color:'#1B1B20'}}>
+              Membresia 2
+            </Typography>
+            <Typography style={{color:'#75A200'}}>
+              Avanzado
+            </Typography>
+          </div>          
+          <div>          
+            <Typography >
+              Beneficios:
+            </Typography>
+            <ul style={{listStyle:'none'}}>
+              <li className={classes.membershipBenefitItem} > <CheckIcon/> Chat con IA</li>
+              <li className={classes.membershipBenefitItem} > <CheckIcon/> Pagina web</li>
+              <li className={classes.membershipBenefitItem} > <CheckIcon/> 2 sedes</li>
+              <li className={classes.membershipBenefitItem} > <CheckIcon/> Reportes</li>
+              <li className={classes.membershipBenefitItem}> <CheckIcon/> Editar menu</li>
+            </ul>          
+          </div>
+        </div>        
         </CardContent>
-        <Grid item>
+        <Grid item className={classes.grid}>
         <button className={classes.button}>Adquirir</button>
         </Grid>
       </Box>
@@ -135,9 +127,10 @@ const useStyles = makeStyles({
   },
 
   cardbox:{
-    margin: '10px ',
+    margin: '10px',
+    padding:'0px 0px 15px 0px',
     width: '286px',
-    height: '310px',
+    height: 'auto',
     top: '221px',
     left: '72px',
     background: 'linear-gradient(152.67deg, #FFFFFF 10.7%, #EEEEEE 123.18%)',
@@ -155,17 +148,17 @@ const useStyles = makeStyles({
     textunderlineposition: 'from-font',
   },
 
-  paper:{
+  membershipPrice:{
     boxsizing: 'border-box',
     boxshadow: '0px 2px 3.1px rgba(0, 0, 0, 0.08)',
-    width: '264.76px',
-    height: '37px',
-    top: '237px',
-    left: '72px',
+    width: '100%',
+    height: '40px',    
     borderRadius:' 0px 15px 15px 0px',
     background:'#75A200',
     color:'#FFFFFF',
-    textAlign: 'center',
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center'
   },
 
   button:{
@@ -186,8 +179,13 @@ const useStyles = makeStyles({
   grid:{
     display: 'flex',
     justifyContent:'center',
-  }
+  },
 
+  membershipBenefitItem: {
+    display: "flex", 
+    alignItems: "center", 
+    gap: "8px"
+  }
 
 });
 

@@ -23,6 +23,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, images, sender }) =>
       style={{
         alignSelf: isUser ? 'flex-end' : 'flex-start',
         backgroundColor: isUser ? '#F5F5F5' : '#F0F3E7',
+        maxWidth: "80%",
         border: `1px solid ${isUser ? '#F5F5F5' : '#75A200'}`,        
         margin: '8px 0',
         padding: "10px 16px",

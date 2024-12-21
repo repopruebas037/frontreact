@@ -1,4 +1,4 @@
-import {border, Box, height, styled, width} from '@mui/system';
+import {Box, styled} from '@mui/system';
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -6,11 +6,11 @@ import heiiLogo from '../../../assets/images/heiiLogo.png'
 import op1 from '../../../assets/images/op1.png'
 import op2 from '../../../assets/images/op2.png'
 import op3 from '../../../assets/images/op3.png'
-import {Card, CardContent, CardMedia, Paper, TextField, Typography} from '@mui/material';
-import { useState } from 'react';
+import {Card} from '@mui/material';
+import { useEffect, useRef, useState } from 'react';
 import ChatInput from './ChatInput';
 import ChatMessage, { Message } from './ChatMessage';
-
+import HeiiHeader from '../../common/containers/HeiiHeader'
 
 const Chatbot = () => {
 
@@ -65,6 +65,7 @@ const Chatbot = () => {
   };
 
   const [messages, setMessages] = useState<Message[]>([]);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const handleSend = (message: string) => {
     setMessages([...messages, { message, images:[], sender: 'user' }]);
@@ -83,17 +84,20 @@ const Chatbot = () => {
     }, 1000);
   };
 
+  const scrollToBottom = () => {
+    //messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
   
   return (
-    <ContainerDiv>
-      <div style={header}>
-        <div style={leftHeader} >
-          <PersonIcon/>
-          <img src={heiiLogo} alt="heii-logo" style={heiiLogoStyle} />
-        </div>
-        <OutButton>Salir  <LogoutIcon style={logoutIcon} /> </OutButton>
-      </div>
-
+    <ContainerDiv>      
+      <HeiiHeader/>
       <NavBar>        
         <ArrowBackIosIcon/>
         <h2 style={menuNav} >Hola,&nbsp;</h2>        
@@ -107,7 +111,7 @@ const Chatbot = () => {
       <div>
         <Card
           style={{
-            height: '50vh',
+            height: '600px',
             display: 'flex',
             flexDirection: 'column',
             padding: '15px'
@@ -135,6 +139,7 @@ const Chatbot = () => {
                 images={msg.images}
                 sender={msg.sender} />
             ))}
+            <div ref={messagesEndRef} />
             </Box>
             <ChatInput onSend={handleSend} />            
           </Card>      

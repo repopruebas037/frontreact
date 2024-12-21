@@ -1,14 +1,9 @@
 import { makeStyles } from '@mui/styles';
-import {border, display, fontSize, height, lineHeight, margin, styled, textAlign, width} from '@mui/system';
-import PersonIcon from '@mui/icons-material/Person';
-import LogoutIcon from '@mui/icons-material/Logout';
+import {styled} from '@mui/system';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import AddIcon from '@mui/icons-material/Add';
-import TextField from '@mui/material/TextField';
 import heiiLogo from '../../../assets/images/heiiLogo.png'
-import { Card, CardContent, CardMedia, FormControl, FormControlLabel, InputAdornment, InputLabel, MenuItem, Radio, RadioGroup, Select, Typography } from '@mui/material';
-import { Margin } from '@mui/icons-material';
+import { Card, CardContent, CardMedia, FormControl, InputLabel, MenuItem, Select, Typography } from '@mui/material';
+import HeiiHeader from '../../common/containers/HeiiHeader'
 
 const ChatbotMenu = () => {
 
@@ -24,90 +19,20 @@ const ChatbotMenu = () => {
     padding:'25px',
   });
 
-  const header = {
-    display:"flex",
-    justifyContent:"space-between",
-    alignItems:'center',
-  }
-
-  const leftHeader={
-    display:"flex"
-  }
-
   const producsMenu ={
     display:'flex',
     justifyContent:'space-between',
     alignItems:'center'
   } 
 
-  const heiiLogoStyle={
-    width: '49px',
-    height:'80%',
-    marginLeft:'10px'
-  }
-
   const NavBar = styled('div')({
     display:'flex',
     alignItems:'center'
   });
 
-  const OutButton = styled('button')({
-    width:'112px',
-    height:'35px',
-    border:'1px',
-    borderRadius:'30px',
-    outline:'1px solid #75A200;',    
-    backgroundColor:'transparent',
-    display:'flex',
-    justifyContent:'space-around',    
-    alignItems:'center',
-    lineHeight:'20px'
-  });
-
-  const logoutIcon = {
-    width:'18px',
-    height:'18px',    
-    color:'#75A200'
-  };
-
   const menuNav = {        
     color:'#75A200'
   };
-
-  const textField = {
-    width:'361px',
-    height:'47px',
-    border:'1px',
-    borderRadius:'10px',
-    margin:'4px 0'
-  }
-
-  const formControlLabel = {
-      justifyContent: 'space-between',
-      width: '361px',
-      height:'45px',
-      padding: '10px',
-      borderRadius: '10px',
-      border:'0.2px',
-      boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.2)',
-      '&:hover': {
-        backgroundColor: '#e0e0e0',
-      },
-  }
-
-  const textArea = {
-    width:'361px',    
-    border:'1.37px',
-    borderRadius:'10px',
-  }
-
-  const AddButton = styled('button')({
-    width:'361px',
-    height:'47px',
-    border:'2px dotted #75A200',
-    borderRadius:'10px',  
-    position:'relative'  
-  });
 
   const SaveButton = styled('button')({
     width:'364px',
@@ -121,14 +46,7 @@ const ChatbotMenu = () => {
 
   return (
     <ContainerDiv>
-      <div style={header}>
-        <div style={leftHeader} >
-          <PersonIcon/>
-          <img src={heiiLogo} alt="heii-logo" style={heiiLogoStyle} />
-        </div>
-        <OutButton>Salir  <LogoutIcon style={logoutIcon} /> </OutButton>
-      </div>
-
+      <HeiiHeader/>
       <NavBar>        
         <ArrowBackIosIcon/>
         <h2>Administrar,&nbsp;</h2>

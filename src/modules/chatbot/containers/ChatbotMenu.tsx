@@ -1,5 +1,5 @@
 import { makeStyles } from '@mui/styles';
-import {border, fontSize, height, lineHeight, margin, styled, textAlign, width} from '@mui/system';
+import {styled} from '@mui/system';
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -8,7 +8,7 @@ import AddIcon from '@mui/icons-material/Add';
 import TextField from '@mui/material/TextField';
 import heiiLogo from '../../../assets/images/heiiLogo.png'
 import { FormControl, FormControlLabel, InputAdornment, Radio, RadioGroup } from '@mui/material';
-import { Margin } from '@mui/icons-material';
+import HeiiHeader from '../../common/containers/HeiiHeader'
 
 const ChatbotMenu = () => {
 
@@ -116,15 +116,8 @@ const ChatbotMenu = () => {
   });
 
   return (
-    <ContainerDiv>
-      <div style={header}>
-        <div style={leftHeader} >
-          <PersonIcon/>
-          <img src={heiiLogo} alt="heii-logo" style={heiiLogoStyle} />
-        </div>
-        <OutButton>Salir  <LogoutIcon style={logoutIcon} /> </OutButton>
-      </div>
-
+    <ContainerDiv>      
+      <HeiiHeader/>
       <NavBar>        
         <ArrowBackIosIcon/>
         <h2 style={menuNav} >Menú,&nbsp;</h2>        
