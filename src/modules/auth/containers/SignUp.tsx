@@ -1,6 +1,6 @@
 import HomeImg from '../../../assets/images/home.png';
 import HeiiLogo from '../../../assets/images/heiiLogoWh.png';
-import {styled} from '@mui/system';
+import {fontSize, styled} from '@mui/system';
 import Link from '@mui/material/Link';
 import {Card, IconButton, InputAdornment, TextField } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
@@ -16,6 +16,7 @@ const containerStyle = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center", 
+  fontSize:'12px'
 }
 
 const mainStyle = {
@@ -24,7 +25,7 @@ const mainStyle = {
   backgroundPosition: 'center',
   backgroundRepeat: "no-repeat",
   height: '95vh',
-  width:'510px',
+  width:'310px',
   display: "flex",
   flexDirection:'column' as 'column', 
   alignItems: "center",   
@@ -33,7 +34,7 @@ const mainStyle = {
 }
 
 const StyledLink = styled(Link)({
-  width:'300px',
+  width:'200px',
   height:'40px',
   background:'#75A200',
   border:'none',
@@ -47,8 +48,8 @@ const StyledLink = styled(Link)({
 });
 
 const textField = {
-  width:'361px',
-  height:'47px',
+  width:'240px',
+  height:'40px',
   border:'1px',
   borderRadius:'10px',
   margin:'0px 0 20px 0'
@@ -70,8 +71,8 @@ const Home = () => {
   return (
     <div style={containerStyle} >
       <div style={mainStyle} >
-        <div style={{display:'flex', flexDirection:'column', alignItems:'center', marginTop:'30vh'}} >
-          <img src={HeiiLogo} alt="" width={'340px'} />
+        <div style={{display:'flex', flexDirection:'column', alignItems:'center', marginTop:'20vh'}} >
+          <img src={HeiiLogo} alt="" width={'50%'} />
           <h2>Bienvenido</h2>
          <p>Ingresa los datos de tu cuenta</p>         
         </div>
@@ -81,9 +82,17 @@ const Home = () => {
           width:'100%',
           marginTop:'auto',
           backgroundColor:'#FFFFFF', 
-          borderRadius:'15px',
-          paddingTop:'50px'}} >   
-          <TextField id="email"             
+          borderRadius:'15px'}} >  
+          <form 
+                style={{
+                    display:'flex', 
+                    flexDirection:'column', 
+                    alignItems:'center',
+                    width:'80%',
+                    marginTop:'auto',          
+                    paddingTop:'30px'
+                }}>
+            <TextField id="email"             
             placeholder='correo12@gmail.com' 
             variant="outlined" 
             label='Correo'
@@ -143,25 +152,28 @@ const Home = () => {
           </div>                    
           <StyledLink href="" color="inherit" style={{marginTop:'20px'}} >
             Registrarme
-          </StyledLink>                                     
+          </StyledLink>         
+          </form> 
+                                              
           <p style={{ display: 'flex', 
                         justifyContent:'space-between', 
                         gap: '50px' ,
-                        marginTop:'20px'
+                        marginTop:'12px'
                       }}> o </p>
 
           {/* ****** SignUp with icon buttons****** */}
           <div style={{ display: 'flex', 
-                        justifyContent:'space-between', 
-                        gap: '50px',
-                        marginTop:'20px'
+                        justifyContent:'space-evenly', 
+                        alignItems:'center',                        
+                        marginTop:'12px',
+                        width:'80%',                        
                       }}
                     >      
             <IconButton              
               sx={{          
               borderRadius: '50%',
-              width: '50px', 
-              height: '50px',
+              width: '20px', 
+              height: '20px',
               boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)', 
               backgroundColor:'#FFFFFF',
               '&:hover': {
@@ -175,8 +187,8 @@ const Home = () => {
             <IconButton              
               sx={{          
                   borderRadius: '50%',
-                  width: '50px', 
-                  height: '50px',
+                  width: '40px', 
+                  height: '40px',
                   boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)', 
                   backgroundColor:'#1DA1F2',
                   '&:hover': {
@@ -190,8 +202,8 @@ const Home = () => {
             <IconButton              
               sx={{          
                   borderRadius: '50%',
-                  width: '50px', 
-                  height: '50px',
+                  width: '40px', 
+                  height: '40px',
                   boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)', 
                   backgroundColor:'#000000',
                   '&:hover': {
@@ -202,7 +214,7 @@ const Home = () => {
               >     
               <AppleIcon style={{fontSize:'25px', color:'#FFFFFF'}} /> 
             </IconButton>
-          </div>    
+          </div>   
           {/* ****** End Login with icon buttons ****** */}
 
           <a style={{marginTop:'30px', color:'#FFFFFF'}}  href="sign-up">Ingresar como visitante</a>

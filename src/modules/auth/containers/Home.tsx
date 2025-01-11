@@ -46,7 +46,7 @@ const Home = () => {
     <div style={containerStyle} >
       <div style={mainStyle} >
         <div style={{display:'flex', flexDirection:'column', alignItems:'center', marginTop:'35vh'}} >
-          <img src={HeiiLogo} alt="" width={'240px'} />
+          <img src={HeiiLogo} alt="" width={'50%'} />
           <h3>Ordena rápido, chatea fácil.</h3>
         </div>
       <div style={{display:'flex', 

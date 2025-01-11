@@ -1,6 +1,6 @@
 import HomeImg from '../../../assets/images/home.png';
 import HeiiLogo from '../../../assets/images/heiiLogoWh.png';
-import {styled} from '@mui/system';
+import {fontSize, styled} from '@mui/system';
 import Link from '@mui/material/Link';
 import {Card, Checkbox, FormControlLabel, IconButton, InputAdornment, TextField } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
@@ -16,6 +16,7 @@ const containerStyle = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center", 
+  fontSize:'12px'
 }
 
 const mainStyle = {
@@ -48,7 +49,7 @@ const StyledLink = styled(Link)({
 
 const textField = {
   width:'240px',
-  height:'45px',
+  height:'40px',
   border:'1px',
   borderRadius:'10px',
   margin:'0px 0 20px 0'
@@ -75,8 +76,11 @@ const Home = () => {
   return (
     <div style={containerStyle} >
       <div style={mainStyle} >
-        <div style={{display:'flex', flexDirection:'column', alignItems:'center', marginTop:'30vh'}} >
-          <img src={HeiiLogo} alt="" width={'240px'} />
+        <div style={{display:'flex', 
+                    flexDirection:'column', 
+                    alignItems:'center', 
+                    marginTop:'20vh'}} >
+          <img src={HeiiLogo} alt="" width={'50%'} />
           <h2>Bienvenido</h2>
          <p>Ingresa los datos de tu cuenta</p>         
         </div>
@@ -101,7 +105,7 @@ const Home = () => {
                     alignItems:'center',
                     width:'80%',
                     marginTop:'auto',          
-                    paddingTop:'50px'
+                    paddingTop:'30px'
                 }}>
             <TextField id="email"             
                 placeholder='correo12@gmail.com' 
@@ -143,12 +147,18 @@ const Home = () => {
                 />
                 <div style={{width:'100%', 
                     display:'flex', 
-                    justifyContent:'space-around', 
-                    alignItems:'center'}} 
+                    justifyContent:'space-between', 
+                    alignItems:'center',
+                    fontSize:'12px'}} 
                 >
                     <FormControlLabel
                         control={<Checkbox />}
                         label="Recuérdame"
+                        sx={{
+                          '& .MuiFormControlLabel-label': {
+                              fontSize: '12px',
+                          },
+                      }}
                     />
                     <Link href="sign-up" 
                         color="#75A200" 
@@ -159,7 +169,7 @@ const Home = () => {
                 </div>                                  
             <StyledLink href="client-mbs" 
               color="inherit" 
-              style={{marginTop:'20px'}}
+              style={{marginTop:'10px'}}
             >
             Iniciar sesión
           </StyledLink>        
@@ -169,15 +179,17 @@ const Home = () => {
             * **** END LOGIN FORM **** 
             * ***********************
             */}        
-          <div style={{display:'flex', alignItems:'center', marginTop:'20px'}} >
-            <p style={{ display: 'flex', 
-                        justifyContent:'space-between',                                                 
-                      }} > No tienes una cuenta?</p>             
+          <div style={{display:'flex', 
+                      justifyContent:'space-evenly',
+                      alignItems:'center', 
+                      marginTop:'12px', width:'80%'}} >
+            <p style={{fontSize:'12px'}} >No tienes una cuenta?</p>             
             <Link href="sign-up" 
                     color="inherit" 
                     style={{                            
                             color:'#75A200',
-                            textDecoration:'none'
+                            textDecoration:'none',
+                            fontSize:'12px'
                         }} 
                     >
                 &nbsp;REGISTRARME
@@ -186,21 +198,22 @@ const Home = () => {
           <p style={{ display: 'flex', 
                         justifyContent:'space-between', 
                         gap: '50px' ,
-                        marginTop:'20px'
+                        marginTop:'12px'
                       }}> o </p>
 
           {/* ****** Login with icon buttons****** */}
           <div style={{ display: 'flex', 
-                        justifyContent:'space-between', 
-                        gap: '50px' ,
-                        marginTop:'20px'
+                        justifyContent:'space-evenly', 
+                        alignItems:'center',                        
+                        marginTop:'12px',
+                        width:'80%',                        
                       }}
                     >      
             <IconButton              
               sx={{          
               borderRadius: '50%',
-              width: '50px', 
-              height: '50px',
+              width: '20px', 
+              height: '20px',
               boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)', 
               backgroundColor:'#FFFFFF',
               '&:hover': {
@@ -214,8 +227,8 @@ const Home = () => {
             <IconButton              
               sx={{          
                   borderRadius: '50%',
-                  width: '50px', 
-                  height: '50px',
+                  width: '40px', 
+                  height: '40px',
                   boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)', 
                   backgroundColor:'#1DA1F2',
                   '&:hover': {
@@ -229,8 +242,8 @@ const Home = () => {
             <IconButton              
               sx={{          
                   borderRadius: '50%',
-                  width: '50px', 
-                  height: '50px',
+                  width: '40px', 
+                  height: '40px',
                   boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)', 
                   backgroundColor:'#000000',
                   '&:hover': {
