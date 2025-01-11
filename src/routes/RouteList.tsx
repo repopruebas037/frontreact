@@ -6,6 +6,7 @@ import AdminMenu from '../modules/clientAdmin/containers/AdminMenu'
 import ChatbotMenu from '../modules/chatbot/containers/ChatbotMenu';
 import ClientMembership from '../modules/client/containers/ClientMembership'
 import Chatbot from '../modules/chatbot/containers/Chatbot';
+import KitchenBoard from "../modules/Kitchen/containers/KitchenBoard";
 
 const RouteList = () => {
   return (
@@ -17,6 +18,7 @@ const RouteList = () => {
         <Route path = '/chatbot-menu' element={<ChatbotMenu/>}/>    
         <Route path = '/client-mbs' element={<ClientMembership/>}/>      
         <Route path = '/chatbot' element={<Chatbot/>}/>                   
+        <Route path = '/kitchen-board' element={<KitchenBoard/>}/>                   
     </Routes>
   )
 }

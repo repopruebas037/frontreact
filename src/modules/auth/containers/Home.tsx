@@ -28,7 +28,7 @@ const mainStyle = {
 }
 
 const StyledLink = styled(Link)({
-  width:'300px',
+  width:'200px',
   height:'40px',
   background:'#75A200',
   border:'none',
@@ -46,8 +46,8 @@ const Home = () => {
     <div style={containerStyle} >
       <div style={mainStyle} >
         <div style={{display:'flex', flexDirection:'column', alignItems:'center', marginTop:'35vh'}} >
-          <img src={HeiiLogo} alt="" width={'340px'} />
-          <h2>Ordena rápido, chatea fácil.</h2>
+          <img src={HeiiLogo} alt="" width={'240px'} />
+          <h3>Ordena rápido, chatea fácil.</h3>
         </div>
       <div style={{display:'flex', 
           flexDirection:'column', 

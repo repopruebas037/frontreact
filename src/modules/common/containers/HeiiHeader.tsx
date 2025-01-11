@@ -5,19 +5,6 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import heiiLogo from '../../../assets/images/heiiLogo.png'
 
 const HeiiHeader = () => {
-
-    const OutButton = styled('button')({
-        width:'112px',
-        height:'35px',
-        border:'1px',
-        borderRadius:'30px',
-        outline:'1px solid #75A200;',    
-        backgroundColor:'transparent',
-        display:'flex',
-        justifyContent:'space-around',    
-        alignItems:'center',
-        lineHeight:'20px'
-      });
       
       const logoutIcon = {
         width:'18px',

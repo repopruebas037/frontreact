@@ -2,7 +2,7 @@ import HomeImg from '../../../assets/images/home.png';
 import HeiiLogo from '../../../assets/images/heiiLogoWh.png';
 import {styled} from '@mui/system';
 import Link from '@mui/material/Link';
-import {Button, Card, Checkbox, FormControlLabel, IconButton, InputAdornment, TextField } from '@mui/material';
+import {Card, Checkbox, FormControlLabel, IconButton, InputAdornment, TextField } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import AppleIcon from '@mui/icons-material/Apple';
@@ -24,7 +24,7 @@ const mainStyle = {
   backgroundPosition: 'center',
   backgroundRepeat: "no-repeat",
   height: '95vh',
-  width:'510px',
+  width:'310px',
   display: "flex",
   flexDirection:'column' as 'column', 
   alignItems: "center",   
@@ -32,22 +32,8 @@ const mainStyle = {
   color:'#FFFFFF',  
 }
 
-const StyledButton = styled(Button)({
-  width:'300px',
-  height:'40px',
-  background:'#75A200',
-  border:'none',
-  borderRadius:'20.5px',  
-  color:'#FFFFFF',
-  fontSize:'20px',
-  textDecoration:'none',
-  display:'flex',
-  alignItems:'center',
-  justifyContent:'center'
-});
-
 const StyledLink = styled(Link)({
-  width:'300px',
+  width:'200px',
   height:'40px',
   background:'#75A200',
   border:'none',
@@ -61,8 +47,8 @@ const StyledLink = styled(Link)({
 });
 
 const textField = {
-  width:'361px',
-  height:'47px',
+  width:'240px',
+  height:'45px',
   border:'1px',
   borderRadius:'10px',
   margin:'0px 0 20px 0'
@@ -90,7 +76,7 @@ const Home = () => {
     <div style={containerStyle} >
       <div style={mainStyle} >
         <div style={{display:'flex', flexDirection:'column', alignItems:'center', marginTop:'30vh'}} >
-          <img src={HeiiLogo} alt="" width={'340px'} />
+          <img src={HeiiLogo} alt="" width={'240px'} />
           <h2>Bienvenido</h2>
          <p>Ingresa los datos de tu cuenta</p>         
         </div>
@@ -113,7 +99,7 @@ const Home = () => {
                     display:'flex', 
                     flexDirection:'column', 
                     alignItems:'center',
-                    width:'100%',
+                    width:'80%',
                     marginTop:'auto',          
                     paddingTop:'50px'
                 }}>

@@ -1,5 +1,5 @@
 import { makeStyles } from '@mui/styles';
-import {CardContent, Typography, Box, Grid, List} from '@mui/material';
+import {CardContent, Typography, Box, Grid} from '@mui/material';
 import HeiiHeader from '../../common/containers/HeiiHeader'
 import CheckIcon from '@mui/icons-material/Check';
 

@@ -1,19 +1,12 @@
-import { makeStyles } from '@mui/styles';
 import {styled} from '@mui/system';
-import PersonIcon from '@mui/icons-material/Person';
-import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AddIcon from '@mui/icons-material/Add';
 import TextField from '@mui/material/TextField';
-import heiiLogo from '../../../assets/images/heiiLogo.png'
 import { FormControl, FormControlLabel, InputAdornment, Radio, RadioGroup } from '@mui/material';
 import HeiiHeader from '../../common/containers/HeiiHeader'
 
 const ChatbotMenu = () => {
-
-  //const classes = useStyles();
-
   const pg = {
     lineHeight:'15px',
     fontSize:'15px',
@@ -26,45 +19,10 @@ const ChatbotMenu = () => {
     padding:'25px',
   });
 
-  const header = {
-    display:"flex",
-    justifyContent:"space-between",
-    alignItems:'center',
-  }
-
-  const leftHeader={
-    display:"flex"
-  }
-
-  const heiiLogoStyle={
-    width: '49px',
-    height:'80%',
-    marginLeft:'10px'
-  }
-
   const NavBar = styled('div')({
     display:'flex',
     alignItems:'center'
   });
-
-  const OutButton = styled('button')({
-    width:'112px',
-    height:'35px',
-    border:'1px',
-    borderRadius:'30px',
-    outline:'1px solid #75A200;',    
-    backgroundColor:'transparent',
-    display:'flex',
-    justifyContent:'space-around',    
-    alignItems:'center',
-    lineHeight:'20px'
-  });
-
-  const logoutIcon = {
-    width:'18px',
-    height:'18px',    
-    color:'#75A200'
-  };
 
   const menuNav = {        
     color:'#75A200'
@@ -284,49 +242,3 @@ const ChatbotMenu = () => {
 }
 
 export default ChatbotMenu
-
-const useStyles = makeStyles({
-  container: {
-    display:'flex',
-    flexDirection:'column',
-    alignItems:'center',
-    background: 'rgba(255, 255, 255, 1)',
-  },
-
-  cardContent:{
-    
-  },
-
-  paper:{
-
-    /*width: '264.76px',
-    height: '37px',
-    top: '237px',
-    left: '72px',
-    borderRadius: '0px 15px 15px 0px',*/
-    width: '264.76px',
-    height: '45px',
-    top: '236px',
-    left: '336.76px',
-    borderRadius: '0px 15px 15px 0px',
-    angle: '-180 deg',
-    background: '#75A200',
-    boxShadow: '0px 2px 3.1px 0px #00000014',
-    color:'#FFFFFF'
-  },
-
-  button:{
-    width: '208.13px',
-    height: '37px',
-    top: '476px',
-    left: '115.89px',
-    borderRadius: '15px',
-    background: '#FFFFFF',
-    border: '1px solid #75A200',
-    boxShadow: '0px 2px 3.1px 0px #00000014',
-    color:'#000000',
-  }
-
-
-});
-

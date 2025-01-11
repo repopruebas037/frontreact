@@ -1,4 +1,3 @@
-import { makeStyles } from '@mui/styles';
 import {styled} from '@mui/system';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import heiiLogo from '../../../assets/images/heiiLogo.png'
@@ -128,49 +127,3 @@ const ChatbotMenu = () => {
 }
 
 export default ChatbotMenu
-
-const useStyles = makeStyles({
-  container: {
-    display:'flex',
-    flexDirection:'column',
-    alignItems:'center',
-    background: 'rgba(255, 255, 255, 1)',
-  },
-
-  cardContent:{
-    
-  },
-
-  paper:{
-
-    /*width: '264.76px',
-    height: '37px',
-    top: '237px',
-    left: '72px',
-    borderRadius: '0px 15px 15px 0px',*/
-    width: '264.76px',
-    height: '45px',
-    top: '236px',
-    left: '336.76px',
-    borderRadius: '0px 15px 15px 0px',
-    angle: '-180 deg',
-    background: '#75A200',
-    boxShadow: '0px 2px 3.1px 0px #00000014',
-    color:'#FFFFFF'
-  },
-
-  button:{
-    width: '208.13px',
-    height: '37px',
-    top: '476px',
-    left: '115.89px',
-    borderRadius: '15px',
-    background: '#FFFFFF',
-    border: '1px solid #75A200',
-    boxShadow: '0px 2px 3.1px 0px #00000014',
-    color:'#000000',
-  }
-
-
-});
-

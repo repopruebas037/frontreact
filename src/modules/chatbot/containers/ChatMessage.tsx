@@ -1,6 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Paper, Typography } from '@mui/material';
-import { Height } from '@mui/icons-material';
+import { Card, CardMedia, Paper, Typography } from '@mui/material';
 
 // Definición del tipo para el mensaje
 export interface Message {

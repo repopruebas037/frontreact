@@ -2,7 +2,7 @@ import HomeImg from '../../../assets/images/home.png';
 import HeiiLogo from '../../../assets/images/heiiLogoWh.png';
 import {styled} from '@mui/system';
 import Link from '@mui/material/Link';
-import {Card, Checkbox, FormControlLabel, IconButton, InputAdornment, TextField } from '@mui/material';
+import {Card, IconButton, InputAdornment, TextField } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import AppleIcon from '@mui/icons-material/Apple';
