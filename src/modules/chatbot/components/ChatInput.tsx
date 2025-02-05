@@ -16,13 +16,17 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSend }) => {
     }
   };
 
+  const textField = {
+    border: '1px solid #75A200',
+    display: 'flex', 
+    alignItems: 'center'
+  }
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
       <TextField
-        fullWidth
-        variant="outlined"
+        //fullWidth
+        //variant="outlined"
         placeholder="Ingresa un mensaje"
-        value={message}
+        //value={message}
         onChange={(e) => setMessage(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && handleSend()}
         slotProps={{
@@ -31,11 +35,11 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSend }) => {
                                 <IconButton color="primary" onClick={handleSend}>
                                     <SendIcon style={{color:'black', transform: 'rotate(-45deg)'}} />
                                 </IconButton>
-                            </InputAdornment>
-                } 
-        }}
+                            </InputAdornment>,                      
+                style: textField
+                }                            
+        }}      
       />
-    </div>
   );
 };
 
