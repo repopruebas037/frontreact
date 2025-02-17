@@ -63,7 +63,6 @@ const Chatbot: React.FC<ChatbotProps> = ({ messages, onUserSend }) => {
     '@media (max-width: 600px)': {
       width: '90%',
     },
-    backgroundColor: 'red'
   });
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -123,7 +122,6 @@ const Chatbot: React.FC<ChatbotProps> = ({ messages, onUserSend }) => {
               flex: 0,
               display: 'flex',
               flexDirection: 'column',
-              backgroundColor: 'blue',
               overflowY: 'auto',
               "&::-webkit-scrollbar": {
                 width: "6px"
