@@ -1,67 +1,108 @@
-import { Box, styled } from '@mui/system';
+import { Box, padding, styled } from '@mui/system';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import op1 from '../../../assets/images/op1.png'
-import op2 from '../../../assets/images/op2.png'
-import op3 from '../../../assets/images/op3.png'
 import { Card } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import ChatInput from './ChatInput';
-import ChatMessage, { Message } from './ChatMessage';
 import HeiiHeader from '../../common/components/HeiiHeader'
+import ChatMessage, { Message } from '../containers/ChatMessage';
 
 type ChatbotProps = {
-  chatResponse: string;
-  onUserSend: (message: string) => Promise<string>;
+  messages: Message[];
+  onUserSend: (user_prompt: string) => Promise<string>;
 };
 
-const Chatbot: React.FC<ChatbotProps> = ({ chatResponse, onUserSend }) => {
+const Chatbot: React.FC<ChatbotProps> = ({ messages, onUserSend }) => {
 
   const ContainerDiv = styled('div')({
+    padding: '20px',
+    boxSizing: 'border-box',
+    width: '100vw',
+    height: '100vh',
+    overflow: 'hidden',
+    '@media (max-width:600px)': {
+      padding: '10px'
+    }
+  });
+
+  const ChatContainer = styled('div')({
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: '80%',
     padding: '25px',
+    boxSizing: 'border-box',
+    '@media (max-width):600px': {
+      padding: '15px'
+    }
   });
 
   const NavBar = styled('div')({
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    '@media (max-width: 600px)': {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+    },
   });
 
   const menuNav = {
     color: '#75A200'
   };
 
-  const [messages, setMessages] = useState<Message[]>([]);
+  const StyledCard = styled(Card)({
+    width: '60%',
+    maxWidth: '600px',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    padding: '15px',
+    boxSizing: 'border-box',
+    '@media (max-width: 600px)': {
+      width: '90%',
+    }
+  });
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement | null>(null);
+  const defaultMessageRef = useRef<HTMLDivElement | null>(null);
 
-  const handleSend = (message: string) => {
-    console.log(message)
-    setMessages([...messages, { message, images: [], sender: 'user' }]);
-
-    // Simula una respuesta del chatbot después de 1 segundo
-    setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        {
-          message: 'Claro! en seguida hay algunas '
-            + 'opciones que te encantarán, '
-            + 'y lo mejor, que están cerca a tu ubicación',
-          images: [op1, op2, op3],
-          sender: 'bot',
-        }
-      ]);
-    }, 1000);
-  };
-
+  /**
+   * Hace que la barra de scroll se ubique al final de contenedor
+   */
   const scrollToBottom = () => {
-    //messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    if (messagesEndRef.current) {
+    if (messages.length >= 1 && messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
+  /**
+   * Modifica el box que contine el chat y mueve el input al 
+   * fondo del contenedor del chat cuando inicia la 
+   * interacción con el chatbot
+   */
+  const fixChatBox = () => {
+    if (messages.length >= 1 && chatContainerRef.current) {
+      chatContainerRef.current.style.flex = '1';
+      chatContainerRef.current.style.padding = '10px';
+    }
+  }
+
+  /**
+   * Desaparece en el mensaje por defecto cuando inicia la interacción
+   */
+  const hideDefaultMessage = () => {
+    if (messages.length >= 1 && defaultMessageRef.current) {
+      defaultMessageRef.current.style.display = 'none';
+    }
+  }
+
   useEffect(() => {
     scrollToBottom();
+    fixChatBox();
+    hideDefaultMessage();
   }, [messages]);
 
   return (
@@ -70,27 +111,15 @@ const Chatbot: React.FC<ChatbotProps> = ({ chatResponse, onUserSend }) => {
       <NavBar>
         <ArrowBackIosIcon />
         <h2 style={menuNav} >Hola,&nbsp;</h2>
-        <h2>Cristian</h2>
+        <h2>Visitante</h2>
       </NavBar>
 
-      <div>
-        <h4>¿Para comenzar, qué te gustaría comer?</h4>
-      </div>
-
-      <div>
-        <Card
-          style={{
-            height: '600px',
-            display: 'flex',
-            flexDirection: 'column',
-            padding: '15px'
-          }}
-        >
+      <ChatContainer>
+        <StyledCard>
           <Box
+            ref={chatContainerRef}
             sx={{
-              flex: 1,
-              overflowY: 'auto',
-              padding: '20px',
+              flex: 0,
               "&::-webkit-scrollbar": {
                 width: "6px"
               },
@@ -100,32 +129,30 @@ const Chatbot: React.FC<ChatbotProps> = ({ chatResponse, onUserSend }) => {
               },
               display: 'flex',
               flexDirection: 'column',
+              '@media (max-width: 600px)': {
+                padding: '10px',
+              },
             }}
+
           >
-            {chatResponse}
+            <div ref={defaultMessageRef} style={{ textAlign: 'center', marginBottom: '5px' }}  >
+              <h4>¿Para comenzar, qué te gustaría comer?</h4>
+            </div>
+            {messages.map((msg, index) => (
+              <ChatMessage key={index}
+                message={msg.message}
+                images={msg.images}
+                sender={msg.sender} />
+            ))}
 
             <div ref={messagesEndRef} />
           </Box>
           <ChatInput onSend={onUserSend} />
-        </Card>
-      </div>
-      <Card
-        sx={{ maxWidth: 400, height: 'auto' }}
-        style={{
-          backgroundColor: '#F5F5F5',
-          margin: '8px 0'
-        }}
-      >
-      </Card>
+        </StyledCard>
+
+      </ChatContainer>
     </ContainerDiv>
   )
 }
 
 export default Chatbot;
-
-/**{messages.map((msg, index) => (
-              <ChatMessage key={index}
-                message={msg.message}
-                images={msg.images}
-                sender={msg.sender} />
-            ))} */
