@@ -62,7 +62,8 @@ const Chatbot: React.FC<ChatbotProps> = ({ messages, onUserSend }) => {
     boxSizing: 'border-box',
     '@media (max-width: 600px)': {
       width: '90%',
-    }
+    },
+    backgroundColor: 'red'
   });
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -120,6 +121,10 @@ const Chatbot: React.FC<ChatbotProps> = ({ messages, onUserSend }) => {
             ref={chatContainerRef}
             sx={{
               flex: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              backgroundColor: 'blue',
+              overflowY: 'auto',
               "&::-webkit-scrollbar": {
                 width: "6px"
               },
@@ -127,8 +132,6 @@ const Chatbot: React.FC<ChatbotProps> = ({ messages, onUserSend }) => {
                 backgroundColor: "#e0e0e0",
                 borderRadius: "3px"
               },
-              display: 'flex',
-              flexDirection: 'column',
               '@media (max-width: 600px)': {
                 padding: '10px',
               },
