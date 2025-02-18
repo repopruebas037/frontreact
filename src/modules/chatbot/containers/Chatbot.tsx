@@ -8,7 +8,7 @@ const Chatbot = () => {
     const [messages, setMessages] = useState<Message[]>([]);
 
     const handleUserSend = async (user_prompt: string) => {
-        const res = await fetch('http://localhost:8000/chatbot/v1/chat', {
+        const res = await fetch('https://backendhei.vercel.app/chatbot/v1/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ user_prompt })
