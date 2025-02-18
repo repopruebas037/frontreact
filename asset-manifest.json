@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/repopruebas037/frontreact/static/css/main.7300b636.css",
+    "main.js": "/repopruebas037/frontreact/static/js/main.34a1a8d0.js",
+    "static/media/home.png": "/repopruebas037/frontreact/static/media/home.a4eb02f93e5a38a07f65.png",
+    "index.html": "/repopruebas037/frontreact/index.html",
+    "main.7300b636.css.map": "/repopruebas037/frontreact/static/css/main.7300b636.css.map",
+    "main.34a1a8d0.js.map": "/repopruebas037/frontreact/static/js/main.34a1a8d0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7300b636.css",
+    "static/js/main.34a1a8d0.js"
+  ]
+}
