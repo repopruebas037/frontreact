@@ -8,7 +8,7 @@ const Chatbot = () => {
     const [messages, setMessages] = useState<Message[]>([]);
 
     const handleUserSend = async (user_prompt: string) => {
-        const res = await fetch('http://localhost:8000/chatbot/v1/chat', {
+        const res = await fetch('http://127.0.0.1:8000/chatbot/v1/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ user_prompt })
@@ -16,18 +16,29 @@ const Chatbot = () => {
 
         if (!res.ok) throw new Error('Error en la API');
 
-        const data = await res.json();
-        handleSend(user_prompt, data.message)
+        const chatbot_response = await res.json();
+        const parsedMessage = JSON.parse(chatbot_response.message);
+        updateChatMessages(user_prompt, parsedMessage)
+
         return chatResponse;
     }
 
-    const handleSend = (user_prompt: string, message: string) => {
-        setMessages([...messages, { message: user_prompt, images: [], sender: 'user' }]);
+    const updateChatMessages = (user_prompt: string, chatbot_response: Message) => {
+        setMessages((prevMessages) => [
+            ...prevMessages,
+            {
+                message: user_prompt,
+                menu: [],
+                images: [],
+                sender: 'user',
+            }
+        ]);
 
         setMessages((prevMessages) => [
             ...prevMessages,
             {
-                message: message,
+                message: chatbot_response.message,
+                menu: chatbot_response.menu,
                 images: [],
                 sender: 'bot',
             }

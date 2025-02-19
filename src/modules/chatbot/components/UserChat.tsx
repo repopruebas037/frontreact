@@ -136,18 +136,20 @@ const Chatbot: React.FC<ChatbotProps> = ({ messages, onUserSend }) => {
             }}
 
           >
-            <div ref={defaultMessageRef} style={{ textAlign: 'center', marginBottom: '5px' }}  >
-              <h4>¿Para comenzar, qué te gustaría comer?</h4>
-            </div>
+
             {messages.map((msg, index) => (
               <ChatMessage key={index}
                 message={msg.message}
+                menu={msg.menu}
                 images={msg.images}
                 sender={msg.sender} />
             ))}
 
             <div ref={messagesEndRef} />
           </Box>
+          <div ref={defaultMessageRef} style={{ textAlign: 'center', marginBottom: '5px' }}  >
+            <h4>¿Para comenzar, qué te gustaría comer?</h4>
+          </div>
           <ChatInput onSend={onUserSend} />
         </StyledCard>
 
