@@ -13,6 +13,7 @@ const Chatbot = () => {
     const [messages, setMessages] = useState<Message[]>([]);
 
     const handleUserSend = async (user_prompt: string) => {
+        console.log(serverHost)
         const res = await fetch(`${serverHost}${chatURL}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
