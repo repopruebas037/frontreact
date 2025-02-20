@@ -4,11 +4,14 @@ import { Message } from './ChatMessage';
 
 const Chatbot = () => {
 
+    const serverHost = process.env.REACT_APP_SERVER_HOST;
+    const chatURL = "/chatbot/v1/chat";
+
     const [chatResponse, setChatResponse] = useState("");
     const [messages, setMessages] = useState<Message[]>([]);
 
     const handleUserSend = async (user_prompt: string) => {
-        const res = await fetch('http://127.0.0.1:8000/chatbot/v1/chat', {
+        const res = await fetch(`${serverHost}${chatURL}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ user_prompt })
