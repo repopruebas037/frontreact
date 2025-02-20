@@ -7,6 +7,8 @@ const Chatbot = () => {
     const serverHost = process.env.REACT_APP_SERVER_HOST;
     const chatURL = "/chatbot/v1/chat";
 
+    console.log(serverHost + chatURL)
+
     const [chatResponse, setChatResponse] = useState("");
     const [messages, setMessages] = useState<Message[]>([]);
 
